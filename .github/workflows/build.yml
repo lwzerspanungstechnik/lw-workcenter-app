@@ -19,6 +19,8 @@ jobs:
           java-version: '17'
       - name: Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools'   # 17.10.2026: Standardpaket 'tools' gibt es im SDK nicht mehr -> Schritt brach ab
       - name: SDK Pakete
         run: |
           yes | sdkmanager --licenses >/dev/null 2>&1 || true
